@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Guia Vitrine Cultural</title>
+<style>
+  @page { size: A4; margin: 20mm 18mm 20mm 18mm; }
+  :root { --cor: #c2410c; --suave: #5c544b; --fundo: #fff7ed; --borda: #fed7aa; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", system-ui, sans-serif; color: #1f1b16; font-size: 11pt; line-height: 1.55; margin: 0; }
+  h1, h2, h3 { line-height: 1.2; }
+  h2 { color: var(--cor); font-size: 18pt; margin: 0 0 10px; padding-bottom: 6px; border-bottom: 2px solid var(--borda); }
+  h3 { font-size: 12.5pt; margin: 18px 0 6px; }
+  p { margin: 6px 0; }
+  .pagina { page-break-after: always; }
+  .pagina:last-child { page-break-after: auto; }
+  .capa { height: 250mm; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+  .capa .selo { color: var(--cor); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: 10pt; }
+  .capa h1 { font-size: 34pt; margin: 14px 0 8px; }
+  .capa .sub { font-size: 14pt; color: var(--suave); max-width: 140mm; margin: 0 auto; }
+  .capa .rodape-capa { margin-top: 50mm; font-size: 10pt; color: var(--suave); }
+  .passo { display: inline-block; background: var(--cor); color: #fff; border-radius: 999px; padding: 2px 12px; font-size: 9.5pt; font-weight: 700; margin-bottom: 6px; }
+  .caixa { background: var(--fundo); border: 1px solid var(--borda); border-radius: 10px; padding: 10px 14px; margin: 12px 0; }
+  .caixa.alerta { background: #fef2f2; border-color: #fecaca; }
+  .caixa strong:first-child { color: var(--cor); }
+  .caixa.alerta strong:first-child { color: #b91c1c; }
+  ol, ul { padding-left: 22px; margin: 6px 0; }
+  li { margin: 3px 0; }
+  code, pre { font-family: Consolas, "Cascadia Mono", monospace; font-size: 9.5pt; }
+  code { background: #f5ede4; padding: 1px 5px; border-radius: 4px; }
+  pre { background: #1f1b16; color: #fde68a; padding: 10px 14px; border-radius: 8px; white-space: pre-wrap; margin: 8px 0; }
+  pre .c { color: #a8a29e; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 10pt; }
+  th, td { border: 1px solid #e7ddd2; padding: 5px 8px; text-align: left; vertical-align: top; }
+  th { background: var(--fundo); }
+  img.print { width: 100%; height: 98mm; object-fit: contain; background: #fffaf5; border: 1px solid #e7ddd2; border-radius: 8px; margin: 8px 0; }
+  .sumario { column-count: 2; } .sumario li { margin: 4px 0; }
+  .check li { list-style: none; margin-left: -18px; }
+  .check li::before { content: "☐  "; color: var(--cor); }
+  .menor { font-size: 9.5pt; color: var(--suave); }
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<section class="pagina capa">
+  <div class="selo">Projeto de Extensão · Ação e Difusão Cultural</div>
+  <h1>Vitrine Cultural</h1>
+  <p class="sub">Guia passo a passo para artesãos, músicos, grupos de teatro e artistas criarem o próprio site de divulgação, de graça e sem saber programar</p>
+  <div class="rodape-capa">
+    Danilo Yamaguti Do Nascimento<br>
+    Bacharelado em Ciência da Computação<br>
+    github.com/DaniloYam/vitrine-cultural<br>
+    2026
+  </div>
+</section>
+
+<!-- SUMÁRIO + APRESENTAÇÃO -->
+<section class="pagina">
+  <h2>Sumário</h2>
+  <ol class="sumario">
+    <li>Por que ter um site?</li>
+    <li>O que você vai precisar</li>
+    <li>Passo 1: Criar uma conta no GitHub</li>
+    <li>Passo 2: Copiar o modelo</li>
+    <li>Passo 3: Colocar seus dados</li>
+    <li>Passo 4: Colocar suas fotos</li>
+    <li>Passo 5: Publicar o site</li>
+    <li>Passo 6: Divulgar</li>
+    <li>Mantendo o site atualizado</li>
+    <li>Problemas comuns e como resolver</li>
+    <li>Lista de conferência final</li>
+  </ol>
+
+  <h2 style="margin-top:28px">1. Por que ter um site?</h2>
+  <p>Muitos artistas e grupos culturais divulgam o trabalho apenas pelas redes sociais. Elas são ótimas, mas têm limites: as publicações antigas "somem" no meio do feed, nem todo mundo tem conta na mesma rede e o alcance depende do algoritmo.</p>
+  <p>Um site próprio funciona como uma <strong>vitrine permanente</strong>:</p>
+  <ul>
+    <li>reúne em um só lugar seus trabalhos, preços, agenda e contatos;</li>
+    <li>pode ser aberto por qualquer pessoa, mesmo sem conta em rede social;</li>
+    <li>passa mais profissionalismo para quem quer contratar ou comprar;</li>
+    <li>pode ser colocado na bio do Instagram, no status do WhatsApp e em cartões de visita.</li>
+  </ul>
+  <p>O <strong>Vitrine Cultural</strong> é um modelo pronto e gratuito. Você só troca os textos e as fotos, e o site fica no ar sem pagar hospedagem, usando o GitHub Pages, um serviço gratuito.</p>
+  <img class="print" src="exemplo-site.png" alt="Exemplo do site Vitrine Cultural">
+  <p class="menor">Exemplo do site com dados fictícios do "Ateliê Barro Vivo".</p>
+</section>
+
+<!-- O QUE PRECISA + PASSO 1 -->
+<section class="pagina">
+  <h2>2. O que você vai precisar</h2>
+  <ul>
+    <li>Um <strong>computador</strong> com internet. Dá para fazer pelo celular, mas é mais fácil no computador.</li>
+    <li>Um <strong>e-mail</strong> que você acesse.</li>
+    <li><strong>Fotos</strong> dos seus trabalhos. Veja as dicas no Passo 4.</li>
+    <li>Um texto curto sobre você ou seu grupo (3 ou 4 frases).</li>
+    <li>Cerca de <strong>1 hora</strong> na primeira vez.</li>
+  </ul>
+  <div class="caixa"><strong>Custo:</strong> zero. Não é preciso cartão de crédito, domínio pago nem hospedagem.</div>
+
+  <h2 style="margin-top:28px">3. Criar uma conta no GitHub</h2>
+  <span class="passo">PASSO 1</span>
+  <p>O GitHub é um site onde programadores guardam projetos. Ele também hospeda sites simples de graça, e é isso que vamos usar.</p>
+  <ol>
+    <li>Acesse <code>github.com</code> e clique em <strong>Sign up</strong> (Cadastrar).</li>
+    <li>Digite seu e-mail, crie uma senha e escolha um <strong>nome de usuário</strong>.</li>
+    <li>Confirme o código enviado para o seu e-mail.</li>
+    <li>Pode pular as perguntas de personalização e escolher o plano <strong>Free</strong> (gratuito).</li>
+  </ol>
+  <div class="caixa"><strong>Dica sobre o nome de usuário:</strong> ele vai aparecer no endereço do seu site (<code>https://SEU-USUARIO.github.io/...</code>). Prefira algo curto e ligado ao seu trabalho, como <code>ateliebarrovivo</code> ou <code>bandaoscaipiras</code>. Use apenas letras minúsculas, números e hífen.</div>
+  <p class="menor">O GitHub é em inglês. Por isso, neste guia, os nomes dos botões aparecem em inglês, com a tradução ao lado.</p>
+</section>
+
+<!-- PASSO 2 -->
+<section class="pagina">
+  <h2>4. Copiar o modelo</h2>
+  <span class="passo">PASSO 2</span>
+  <p>Agora você vai fazer uma cópia do modelo na sua conta. Ela será só sua e você poderá editá-la à vontade.</p>
+  <ol>
+    <li>Com a conta aberta, acesse <code>github.com/DaniloYam/vitrine-cultural</code>.</li>
+    <li>Clique no botão verde <strong>Use this template</strong> (Usar este modelo) e depois em <strong>Create a new repository</strong> (Criar novo repositório).</li>
+    <li>Em <strong>Repository name</strong> (nome do repositório), escreva um nome curto, por exemplo <code>site</code> ou <code>portfolio</code>.</li>
+    <li>Deixe marcada a opção <strong>Public</strong> (Público). Ela é necessária para o site gratuito funcionar.</li>
+    <li>Clique em <strong>Create repository</strong> (Criar repositório).</li>
+  </ol>
+  <p>Pronto. Você agora tem uma pasta online, chamada "repositório", com estes arquivos:</p>
+  <table>
+    <tr><th>Arquivo / pasta</th><th>Para que serve</th><th>Vou mexer?</th></tr>
+    <tr><td><code>dados.js</code></td><td>Todos os textos, contatos, trabalhos e agenda</td><td><strong>Sim</strong></td></tr>
+    <tr><td><code>imagens/</code></td><td>As fotos dos trabalhos</td><td><strong>Sim</strong></td></tr>
+    <tr><td><code>index.html</code></td><td>Estrutura da página</td><td>Não</td></tr>
+    <tr><td><code>estilo.css</code></td><td>Aparência do site</td><td>Não</td></tr>
+    <tr><td><code>script.js</code></td><td>Monta a página com os seus dados</td><td>Não</td></tr>
+    <tr><td><code>guia/</code></td><td>Este guia</td><td>Não (pode até apagar)</td></tr>
+  </table>
+  <div class="caixa"><strong>Você só precisa mexer em duas coisas:</strong> o arquivo <code>dados.js</code> e a pasta <code>imagens</code>. O resto já está pronto.</div>
+</section>
+
+<!-- PASSO 3 -->
+<section class="pagina">
+  <h2>5. Colocar seus dados</h2>
+  <span class="passo">PASSO 3</span>
+  <ol>
+    <li>No seu repositório, clique no arquivo <code>dados.js</code>.</li>
+    <li>Clique no ícone de <strong>lápis</strong> (Edit this file / Editar arquivo), no canto direito.</li>
+    <li>Troque os textos de exemplo pelos seus. Veja as regras abaixo.</li>
+    <li>Quando terminar, clique no botão verde <strong>Commit changes...</strong> (Salvar alterações) e confirme em <strong>Commit changes</strong>.</li>
+  </ol>
+
+  <h3>As 3 regras de ouro</h3>
+  <pre>nome: <span style="color:#86efac">"Ateliê Barro Vivo"</span>,
+<span class="c">^^^^   ^^^^^^^^^^^^^^^^^^^^ ^</span>
+<span class="c">  |            |            └─ 3. a vírgula no final continua lá</span>
+<span class="c">  |            └─ 2. o seu texto fica DENTRO das aspas</span>
+<span class="c">  └─ 1. não mude o nome antes dos dois-pontos</span></pre>
+  <p>Se não quiser usar um campo, deixe as aspas vazias: <code>instagram: "",</code>. A informação simplesmente não aparece no site.</p>
+
+  <h3>O que cada campo faz</h3>
+  <table>
+    <tr><th>Campo</th><th>O que colocar</th><th>Exemplo</th></tr>
+    <tr><td><code>nome</code></td><td>Nome do artista, grupo ou ateliê</td><td>"Banda Raiz Caipira"</td></tr>
+    <tr><td><code>tipoDeArte</code></td><td>O que você faz, em poucas palavras</td><td>"Música sertaneja de raiz"</td></tr>
+    <tr><td><code>cidade</code></td><td>Cidade e estado</td><td>"Assis - SP"</td></tr>
+    <tr><td><code>frase</code></td><td>Uma frase de apresentação</td><td>"Viola, causo e tradição desde 2010."</td></tr>
+    <tr><td><code>corPrincipal</code></td><td>Cor do site (veja sugestões no arquivo)</td><td>"#15803d" (verde)</td></tr>
+    <tr><td><code>sobre</code></td><td>Parágrafos sobre sua história, cada um entre aspas</td><td>—</td></tr>
+    <tr><td><code>whatsapp</code></td><td>Só números: 55 + DDD + número</td><td>"5518999990000"</td></tr>
+    <tr><td><code>instagram</code></td><td>Seu usuário, sem o @</td><td>"bandaraizcaipira"</td></tr>
+    <tr><td><code>email</code></td><td>E-mail de contato</td><td>"contato@email.com"</td></tr>
+    <tr><td><code>endereco</code></td><td>Onde encontrar você</td><td>"Feira da praça, aos sábados"</td></tr>
+  </table>
+</section>
+
+<!-- PASSO 3 cont. -->
+<section class="pagina">
+  <h3>Trabalhos (galeria)</h3>
+  <p>Cada trabalho é um bloco entre chaves <code>{ }</code>. Para <strong>adicionar</strong> um trabalho, copie um bloco inteiro, cole logo abaixo e troque os dados. Para <strong>remover</strong>, apague o bloco inteiro, da chave <code>{</code> até <code>},</code>.</p>
+  <pre>{
+  titulo: <span style="color:#86efac">"Show acústico"</span>,
+  categoria: <span style="color:#86efac">"Apresentações"</span>,   <span class="c">// cria um botão de filtro</span>
+  descricao: <span style="color:#86efac">"Repertório de 1h30 para eventos e festas."</span>,
+  preco: <span style="color:#86efac">"Sob consulta"</span>,
+  foto: <span style="color:#86efac">"imagens/show.jpg"</span>,      <span class="c">// nome EXATO da foto</span>
+},</pre>
+  <p>Trabalhos com a mesma <code>categoria</code> são agrupados, e o site cria botões de filtro automaticamente. O botão <strong>"Tenho interesse"</strong> abre o WhatsApp do visitante com a mensagem: <em>"Olá! Vi no site e tenho interesse em: Show acústico"</em>.</p>
+
+  <h3>Agenda</h3>
+  <p>Funciona do mesmo jeito. A data deve seguir o formato <strong>ano-mês-dia</strong>:</p>
+  <pre>{
+  data: <span style="color:#86efac">"2026-11-14"</span>,   <span class="c">// 14 de novembro de 2026</span>
+  titulo: <span style="color:#86efac">"Feira de Artesanato da Praça"</span>,
+  local: <span style="color:#86efac">"Praça central"</span>,
+  horario: <span style="color:#86efac">"9h às 15h"</span>,
+},</pre>
+  <p>Eventos com data passada <strong>somem sozinhos</strong> do site. Se não houver nenhum evento futuro, a seção Agenda fica escondida.</p>
+
+  <div class="caixa alerta"><strong>Atenção:</strong> se depois de salvar o site ficar em branco, quase sempre é uma aspa ou vírgula faltando. Veja a seção "Problemas comuns".</div>
+</section>
+
+<!-- PASSO 4 -->
+<section class="pagina">
+  <h2>6. Colocar suas fotos</h2>
+  <span class="passo">PASSO 4</span>
+  <h3>Dicas para tirar boas fotos com o celular</h3>
+  <ul>
+    <li><strong>Luz natural:</strong> fotografe perto de uma janela, de dia, sem flash.</li>
+    <li><strong>Fundo simples:</strong> um lençol, uma parede lisa ou uma cartolina. O trabalho tem que ser o destaque.</li>
+    <li><strong>Celular na horizontal (deitado):</strong> o site mostra as fotos nesse formato.</li>
+    <li><strong>Limpe a lente</strong> do celular antes de fotografar.</li>
+    <li>Para música e teatro, use fotos de apresentações, do grupo ou cartazes.</li>
+  </ul>
+
+  <h3>Como dar nome aos arquivos</h3>
+  <p>Renomeie as fotos <strong>antes</strong> de enviar, com nomes curtos, <strong>sem espaços, sem acentos e em letras minúsculas</strong>:</p>
+  <table>
+    <tr><th>Evite</th><th>Prefira</th></tr>
+    <tr><td><code>IMG_20261004_153022.jpg</code></td><td><code>vaso-azul.jpg</code></td></tr>
+    <tr><td><code>Foto Caneca Rústica.JPG</code></td><td><code>caneca-rustica.jpg</code></td></tr>
+  </table>
+
+  <h3>Enviando para o GitHub</h3>
+  <ol>
+    <li>No repositório, clique na pasta <code>imagens</code>.</li>
+    <li>Clique em <strong>Add file</strong> (Adicionar arquivo) e depois em <strong>Upload files</strong> (Enviar arquivos).</li>
+    <li>Arraste as fotos para a página e clique em <strong>Commit changes</strong>.</li>
+    <li>Volte ao <code>dados.js</code> e, em cada trabalho, coloque o nome da foto: <code>foto: "imagens/vaso-azul.jpg",</code></li>
+  </ol>
+  <div class="caixa"><strong>Tamanho:</strong> fotos muito grandes deixam o site lento. Se o arquivo tiver mais de 1 MB, envie a foto para você mesmo pelo WhatsApp e baixe de volta. O WhatsApp já reduz o tamanho.</div>
+  <p class="menor">As ilustrações de exemplo (vaso.svg, panela.svg etc.) podem ser apagadas depois que você colocar as suas fotos.</p>
+</section>
+
+<!-- PASSO 5 + 6 -->
+<section class="pagina">
+  <h2>7. Publicar o site</h2>
+  <span class="passo">PASSO 5</span>
+  <ol>
+    <li>No repositório, clique em <strong>Settings</strong> (Configurações), na barra de cima.</li>
+    <li>No menu da esquerda, clique em <strong>Pages</strong> (Páginas).</li>
+    <li>Em <strong>Source</strong> (Origem), deixe <strong>Deploy from a branch</strong> (Publicar a partir de um ramo).</li>
+    <li>Em <strong>Branch</strong> (Ramo), escolha <code>main</code> e a pasta <code>/ (root)</code>. Clique em <strong>Save</strong> (Salvar).</li>
+    <li>Espere de 1 a 3 minutos e atualize a página. Vai aparecer o aviso <em>"Your site is live at..."</em> com o endereço do site.</li>
+  </ol>
+  <div class="caixa"><strong>Seu endereço será:</strong> <code>https://SEU-USUARIO.github.io/NOME-DO-REPOSITORIO/</code><br>Por exemplo: <code>https://ateliebarrovivo.github.io/site/</code></div>
+  <p>A partir de agora, <strong>toda vez que você salvar uma alteração</strong> no <code>dados.js</code> ou enviar uma foto, o site se atualiza sozinho em 1 ou 2 minutos.</p>
+
+  <h2 style="margin-top:28px">8. Divulgar</h2>
+  <span class="passo">PASSO 6</span>
+  <ul>
+    <li><strong>Instagram:</strong> coloque o endereço no campo "Site" do perfil (Editar perfil → Links).</li>
+    <li><strong>WhatsApp Business:</strong> coloque o link no perfil comercial e no catálogo.</li>
+    <li><strong>Status do WhatsApp:</strong> publique o link com uma foto do seu melhor trabalho.</li>
+    <li><strong>QR Code:</strong> gere um QR Code gratuito com o endereço do site e imprima em etiquetas, cartões de visita ou na sua banca de feira. Muitos navegadores já fazem isso: no Chrome e no Edge, use o menu "Compartilhar → Criar código QR".</li>
+    <li><strong>Google:</strong> se você tiver um Perfil de Empresa no Google, adicione o endereço do site nele.</li>
+  </ul>
+</section>
+
+<!-- MANUTENÇÃO + PROBLEMAS + CHECKLIST -->
+<section class="pagina">
+  <h2>9. Mantendo o site atualizado</h2>
+  <ul>
+    <li><strong>Trabalho novo?</strong> Envie a foto para <code>imagens</code> e copie um bloco no <code>dados.js</code>.</li>
+    <li><strong>Vendeu uma peça?</strong> Apague o bloco dela ou troque o preço para "Vendido".</li>
+    <li><strong>Feira ou show marcado?</strong> Adicione na <code>agenda</code>.</li>
+    <li>Reserve 10 minutos por mês para revisar preços e contatos.</li>
+  </ul>
+
+  <h2 style="margin-top:24px">10. Problemas comuns e como resolver</h2>
+  <table>
+    <tr><th>Problema</th><th>Causa provável</th><th>Solução</th></tr>
+    <tr><td>Site todo em branco</td><td>Aspa ou vírgula faltando no <code>dados.js</code></td><td>Confira a última parte que você mudou: cada texto entre aspas e uma vírgula no fim da linha.</td></tr>
+    <tr><td>Foto não aparece</td><td>Nome diferente do arquivo</td><td>O nome no <code>dados.js</code> tem que ser idêntico, inclusive maiúsculas: <code>Vaso.JPG</code> ≠ <code>vaso.jpg</code>.</td></tr>
+    <tr><td>Mudança não aparece</td><td>O site ainda não atualizou</td><td>Espere 2 minutos e recarregue a página (Ctrl + F5 no computador).</td></tr>
+    <tr><td>Erro 404 (página não encontrada)</td><td>Pages não ativado ou endereço errado</td><td>Refaça o Passo 5 e confira o endereço mostrado em Settings → Pages.</td></tr>
+    <tr><td>Botão do WhatsApp não abre a conversa</td><td>Número em formato errado</td><td>Use só números, começando por 55 e o DDD. Sem espaços, traços ou parênteses.</td></tr>
+  </table>
+
+  <h2 style="margin-top:24px">11. Lista de conferência final</h2>
+  <ul class="check">
+    <li>Troquei o nome, a frase e a cidade.</li>
+    <li>Escolhi a cor do site.</li>
+    <li>Escrevi o texto "Sobre".</li>
+    <li>Coloquei meu WhatsApp, Instagram e e-mail (ou deixei vazio o que não uso).</li>
+    <li>Troquei todos os trabalhos de exemplo pelos meus, com fotos.</li>
+    <li>Atualizei ou apaguei os eventos da agenda.</li>
+    <li>Ativei o GitHub Pages e o site abriu no celular.</li>
+    <li>Testei o botão "Tenho interesse".</li>
+    <li>Coloquei o link na bio do Instagram e no WhatsApp.</li>
+  </ul>
+  <p class="menor" style="margin-top:18px">Vitrine Cultural é um projeto livre (licença MIT): pode usar, copiar e adaptar à vontade. Código-fonte e versão mais recente deste guia: github.com/DaniloYam/vitrine-cultural</p>
+</section>
+
+</body>
+</html>

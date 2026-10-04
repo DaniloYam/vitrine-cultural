@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vitrine Cultural</title>
+  <meta name="description" content="Portfólio de artista ou grupo cultural">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <nav class="menu" aria-label="Menu principal">
+      <a href="#inicio" class="menu-marca" data-campo="nome"></a>
+      <div class="menu-links">
+        <a href="#trabalhos">Trabalhos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#agenda" id="link-agenda">Agenda</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="destaque">
+      <p class="destaque-tipo" data-campo="tipoDeArte"></p>
+      <h1 data-campo="nome"></h1>
+      <p class="destaque-frase" data-campo="frase"></p>
+      <p class="destaque-cidade" data-campo="cidade"></p>
+      <a href="#trabalhos" class="botao">Ver trabalhos</a>
+    </section>
+
+    <section id="trabalhos" class="secao">
+      <h2>Trabalhos</h2>
+      <div class="filtros" id="filtros" role="group" aria-label="Filtrar por categoria"></div>
+      <div class="galeria" id="galeria"></div>
+    </section>
+
+    <section id="sobre" class="secao secao-alt">
+      <h2>Sobre</h2>
+      <div class="sobre-texto" id="sobre-texto"></div>
+    </section>
+
+    <section id="agenda" class="secao">
+      <h2>Agenda</h2>
+      <ul class="agenda" id="lista-agenda"></ul>
+    </section>
+
+    <section id="contato" class="secao secao-alt">
+      <h2>Contato</h2>
+      <div class="contatos" id="contatos"></div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Feito com <a href="https://github.com/DaniloYam/vitrine-cultural">Vitrine Cultural</a>, modelo gratuito e de código aberto.</p>
+  </footer>
+
+  <dialog id="ampliada" class="ampliada">
+    <button class="ampliada-fechar" id="ampliada-fechar" aria-label="Fechar">&times;</button>
+    <img id="ampliada-img" alt="">
+    <p id="ampliada-legenda"></p>
+  </dialog>
+
+  <script src="dados.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
